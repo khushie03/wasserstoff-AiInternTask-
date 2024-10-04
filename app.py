@@ -31,7 +31,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("YOUR PERSONAL ASSISTANT")
+st.title("YOUR PDF Friend")
 
 
 selected_page = st.sidebar.selectbox(
