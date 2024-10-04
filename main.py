@@ -6,7 +6,6 @@ from transformers import AutoModelForTokenClassification, AutoTokenizer
 text_de = "Google Office is in London Google established in 10092 , Google working on artificiAL iNTELLIGENCE"
 tags = ['O', 'B-PER', 'I-PER', 'B-ORG', 'I-ORG', 'B-LOC', 'I-LOC']
 
-# Define device
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 model = AutoModelForTokenClassification.from_pretrained("Khushiee/xlm-roberta-base-finetuned-panx-ner-1").to(device)
@@ -46,9 +45,3 @@ def summarize_dialogue(custom_dialogue):
     except Exception as e:
         print(f"An error occurred with the custom model: {e}")
         return None
-
-df = tag_text(text_de, tags, model, xlmr_tokenizer)
-print(df)
-
-print(summarize_dialogue("""
-                         I loved playing football India born in Cricket """))
