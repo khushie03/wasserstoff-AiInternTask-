@@ -1,0 +1,9 @@
+streamlit
+fitz
+pandas
+transformers
+torch
+frontend
+PyMuPDf
+tools
+sentencepiece
