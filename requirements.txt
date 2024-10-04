@@ -8,3 +8,4 @@ PyMuPDf
 tools
 sentencepiece
 pymongo
+certifi
