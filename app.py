@@ -1,8 +1,9 @@
 import streamlit as st
-import os
 from main import *
+import os
 import json
 import fitz  
+import pandas as pd
 from main import tag_text, summarize_dialogue  
 
 UPLOAD_FOLDER = 'uploads'
@@ -32,13 +33,16 @@ if uploaded_file is not None:
     pdf_text = extract_text_from_pdf(filepath)
     ner_tags_df = tag_text(pdf_text, tags, model, xlmr_tokenizer)  
     summarized_text = summarize_dialogue(pdf_text) 
-    ner_json = ner_tags_df.to_dict(orient='records')
+    
+    ner_tags_df = pd.DataFrame(ner_tags_df)
+    ner_tags_df.columns = ['Token', 'Tag']
 
     st.success('File successfully uploaded and processed!')
     st.subheader("Summary")
     st.write(summarized_text)
     
     st.subheader("NER Tags")
-    st.json(ner_json)
+    st.dataframe(ner_tags_df)
+
 else:
     st.warning("Please upload a PDF file.")
