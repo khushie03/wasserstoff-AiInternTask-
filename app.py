@@ -6,8 +6,6 @@ import pandas as pd
 from pymongo import MongoClient
 from pymongo.server_api import ServerApi
 
-if not os.path.exists('static'):
-    os.makedirs('static')
 
 uri = "mongodb+srv://khushi1103p:Prusshita1234@cluster0.mjnio.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
 client = MongoClient(uri, server_api=ServerApi('1'))
@@ -35,8 +33,6 @@ st.set_page_config(
 
 st.title("YOUR PERSONAL ASSISTANT")
 
-image_path = "static\pdfimg.jpg"  
-st.image(image_path, width=400)  
 
 selected_page = st.sidebar.selectbox(
     "Select a page:",
