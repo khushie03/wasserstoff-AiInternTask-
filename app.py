@@ -12,6 +12,9 @@ client = MongoClient(uri, server_api=ServerApi('1'))
 db = client.mydb
 collection = db.mycollection
 
+if not os.path.exists('static'):
+    os.makedirs('static')
+    
 UPLOAD_FOLDER = 'uploads'
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
