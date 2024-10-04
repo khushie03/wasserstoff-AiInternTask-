@@ -29,14 +29,12 @@ def tag_text(text, tags, model, tokenizer):
             seen_tokens.add(token)  
     return pd.DataFrame({'Tokens': filtered_tokens, 'Tags': filtered_preds})
 
-# Summarization function (optional, no changes)
 def summarize_dialogue(custom_dialogue):
     try:
         model_name = "Khushiee/pegasus-samsum-summarization"
         tokenizer = PegasusTokenizer.from_pretrained(model_name)
         model = PegasusForConditionalGeneration.from_pretrained(model_name)
 
-        # Tokenize the input and summarize
         inputs = tokenizer(custom_dialogue, return_tensors="pt", truncation=True)
         summary_ids = model.generate(inputs["input_ids"])
         summary = tokenizer.decode(summary_ids[0], skip_special_tokens=True)
