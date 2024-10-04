@@ -1,5 +1,6 @@
 import streamlit as st
 import os
+from main import *
 import json
 import fitz  
 from main import tag_text, summarize_dialogue  
