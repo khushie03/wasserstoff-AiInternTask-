@@ -1,7 +1,7 @@
 import streamlit as st
 from main import *
 import os
-import fitz  # Ensure PyMuPDF is installed
+import fitz 
 import pandas as pd
 
 UPLOAD_FOLDER = 'uploads'
