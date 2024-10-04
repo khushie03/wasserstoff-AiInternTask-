@@ -32,6 +32,9 @@ st.set_page_config(
 
 st.title("YOUR PERSONAL ASSISTANT")
 
+image_url = "https://media.istockphoto.com/id/1948375456/photo/employee-downloading-computer-files-or-installing-software-on-laptop-computer-but-the.webp?a=1&b=1&s=612x612&w=0&k=20&c=Ef0t30STrpb_l6Lc5aQ6URoIqKy6nbihe99y1eEcn7U="  
+st.image(image_url, width=400)  
+
 selected_page = st.sidebar.selectbox(
     "Select a page:",
     ["PDF Summarization", "View Database"]
